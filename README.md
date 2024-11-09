@@ -54,7 +54,13 @@ sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker
 
 <br>![7](https://github.com/user-attachments/assets/195cf68e-47f0-4c72-9886-5720d41dc0e8)
 
-<br>Изменяем прва доступа для файла (права на выполнение как исполняемого файла).
+<br>Изменяем права доступа для файла (права на выполнение как исполняемого файла).
 ```
 sudo chmod +x /usr/bin/docker-compose
 ```
+
+<br>Показывает версию Docker Compose.
+```
+docker-compose --version
+```
+<br>![7](https://github.com/user-attachments/assets/6957ba4f-d416-452c-a448-8e1b716250c2)
