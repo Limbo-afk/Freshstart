@@ -8,3 +8,7 @@
 ```
 sudo yum install wget
 ```
+Скачиваем файл с указанного репозитория и сохраняем его в директорию /etc/yum.repos.d/. Этот файл нужен для получения информации откуда выгружаются пакеты Docker
+```
+sudo wget -P /etc/yum.repos.d/ https://download.docker.com/linux/centos/docker-ce.repo
+```
