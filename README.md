@@ -77,3 +77,32 @@ git clone https://github.com/skl256/grafana_stack_for_docker.git
 cd grafana_stack_for_docker
 ```
 <br>![10](https://github.com/user-attachments/assets/76ad8975-4ee6-4af1-af10-0c81dbcf882e)
+<br>Создаем директоррию `config`
+```
+sudo mkdir -p /mnt/common_volume/swarm/grafana/config
+```
+
+<br>Создаем несколько диреткорий для хранения конфигурационных файлов и данных от Grafana.
+```
+sudo mkdir -p /mnt/common_volume/grafana/{grafana-config,grafana-data,prometheus-data,loki-data,promtail-data}
+```
+
+<br>Меняет владельца на того, кто выполнил команду (для управления).
+```
+sudo chown -R $(id -u):$(id -g) {/mnt/common_volume/swarm/grafana/config,/mnt/common_volume/grafana}
+```
+
+<br>Если файла нет - создает, если есть изменяет временные метки доступа до текущего времени, не изменяя содержимое.
+```
+touch /mnt/common_volume/grafana/grafana-config/grafana.ini
+```
+
+<br>Копируем **все файлы** из диреткории `config` в директорию `/mnt/common_volume/swarm/grafana/config/`.
+```
+cp config/* /mnt/common_volume/swarm/grafana/config/
+```
+
+<br>Переименовываем файл `grafana.yaml` в `docker-compose.yaml`. (можно проверить через ls)
+```
+mv grafana.yaml docker-compose.yaml
+```
