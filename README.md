@@ -52,3 +52,9 @@ COMVER=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | g
 sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
 ```
 
+<br>![7](https://github.com/user-attachments/assets/195cf68e-47f0-4c72-9886-5720d41dc0e8)
+
+<br>Изменяем прва доступа для файла (права на выполнение как исполняемого файла).
+```
+sudo chmod +x /usr/bin/docker-compose
+```
