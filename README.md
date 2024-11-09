@@ -63,4 +63,5 @@ sudo chmod +x /usr/bin/docker-compose
 ```
 docker-compose --version
 ```
-<br>![7](https://github.com/user-attachments/assets/6957ba4f-d416-452c-a448-8e1b716250c2)
+<br>![8](https://github.com/user-attachments/assets/4ed2a4bd-a511-4240-b781-dec25cdbcc0a)
+
