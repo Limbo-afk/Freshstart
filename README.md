@@ -77,6 +77,7 @@ git clone https://github.com/skl256/grafana_stack_for_docker.git
 cd grafana_stack_for_docker
 ```
 <br>![10](https://github.com/user-attachments/assets/76ad8975-4ee6-4af1-af10-0c81dbcf882e)
+
 <br>Создаем директоррию `config`
 ```
 sudo mkdir -p /mnt/common_volume/swarm/grafana/config
