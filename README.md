@@ -155,4 +155,54 @@ sudo vi docker-compose.yaml
 <br> АХАХАХАХАХАХАХА ОНО РАБОТАЕТ!!!!!!
 <br>![16](https://github.com/user-attachments/assets/c6b59c62-ba99-497e-bb6a-7bfd1735909a)
 
+## VictoriaMetrics
+<br>Останавливаем докер.
+```
+sudo docker-compose stop
+```
+<br>Переделываем `docker-compose.yaml`. Убираем все лишнее, а ниже код к VictoriaMetrics, который надо **добавить**.
+```
+ victoriametrics:
+    container_name: victoriametrics
+    image: victoriametrics/victoria-metrics:v1.105.0
+    ports:
+      - 8428:8428
+      - 8089:8089
+      - 8089:8089/udp
+      - 2003:2003
+      - 2003:2003/udp
+      - 4242:4242
+    volumes:
+      - vmdata:/storage
+    command:
+      - "--storageDataPath=/storage"
+      - "--graphiteListenAddr=:2003"
+      - "--opentsdbListenAddr=:4242"
+      - "--httpListenAddr=:8428"
+      - "--influxListenAddr=:8089"
+      - "--vmalert.proxyURL=http://vmalert:8880"
+    networks:
+      - vm_net
+    restart: always
+```
+<br>Снова поднимаем
+```
+sudo docker compose up -d
+```
+<br>Команда отправляет метрику OILCOINT_metric2 с типом gauge и значением 0 на локальный сервер Prometheus по адресу http://localhost:8428/api/v1/import/prometheus. Она использует echo для формирования данных и curl для их передачи.
+```
+echo -e "# TYPE OILCOINT_metric2 gauge\nOILCOINT_metric2 0" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus
+```
+<br>Команда выполняет GET-запрос к локальному серверу Prometheus для получения значения метрики OILCOINT_metric2.
+```
+curl -G 'http://localhost:8428/api/v1/query' --data-urlencode 'query=OILCOINT_metric2'
+```
+<br>Повторяем команду, но со значением 50, чтобы увидеть изменения.
+```
+echo -e "# TYPE OILCOINT_metric2 gauge\nOILCOINT_metric2 50" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus
+```
+<br>Открываем VictoriaMetrics на `localhost:8428`
+<br>![18](https://github.com/user-attachments/assets/4ce68e7c-2e7a-4eff-b3a8-b603a0d1dc94)
+<br>Переходим в `vmui - Web UI` и видим отображение наших запросов, значит данные доходят.
+<br>![17](https://github.com/user-attachments/assets/92bbf304-5cf5-49ca-910e-d681e36f5940)
 
