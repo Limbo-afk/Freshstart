@@ -15,3 +15,14 @@ sudo yum install wget
 sudo wget -P /etc/yum.repos.d/ https://download.docker.com/linux/centos/docker-ce.repo
 ```
 <br>![2](https://github.com/user-attachments/assets/4081d5f2-7109-40c4-80a3-c8a7a2d72cca)
+<br>Устанавлием непосредтсвенно пакеты Docker (сам Docker Engine, Docker CLI и Containerd).
++ `docker-ce` — это основной пакет Docker Community Edition.
++ `docker-ce-cli` — это командная строка Docker, которая позволяет взаимодействовать с Docker через терминал.
++ `containerd.io` — это контейнерный демон, который управляет жизненным циклом контейнеров.
+
+```
+sudo yum install docker-ce docker-ce-cli containerd.io
+```
+<br>![3](https://github.com/user-attachments/assets/6a739009-4e89-428f-87a6-10ea6780a39a)
+<br> Подтверждаем
+<br>![4](https://github.com/user-attachments/assets/f5520071-edbb-4fb2-aa9e-5091cb43d4a9)
