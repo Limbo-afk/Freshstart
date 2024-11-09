@@ -70,3 +70,10 @@ docker-compose --version
 ```
 git clone https://github.com/skl256/grafana_stack_for_docker.git
 ```
+<br>![image](https://github.com/user-attachments/assets/d330fe56-f58c-483b-b5ba-080d877dad26)
+
+<br>Переходим в папку `grafana_stack_for_docker`
+```
+cd grafana_stack_for_docker
+```
+<br>![10](https://github.com/user-attachments/assets/76ad8975-4ee6-4af1-af10-0c81dbcf882e)
