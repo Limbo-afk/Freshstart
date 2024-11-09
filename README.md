@@ -205,6 +205,6 @@ echo -e "# TYPE OILCOINT_metric2 gauge\nOILCOINT_metric2 50" | curl --data-binar
 <br>![18](https://github.com/user-attachments/assets/4ce68e7c-2e7a-4eff-b3a8-b603a0d1dc94)
 <br>Переходим в `vmui - Web UI` и видим отображение наших запросов, значит данные доходят.
 <br>![17](https://github.com/user-attachments/assets/92bbf304-5cf5-49ca-910e-d681e36f5940)
-<br> КОНЕЦ!
+<br>Добавляем Викторию Dashboard и КОНЕЦ!
 <br>![19](https://github.com/user-attachments/assets/1e99c26d-5946-4326-8f60-54dc24f9c752)
 
