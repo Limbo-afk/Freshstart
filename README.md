@@ -115,5 +115,19 @@ sudo docker compose up -d
 ```
 <br>![12](https://github.com/user-attachments/assets/da5db25d-174d-4937-8a86-2ca81d2a1ba7)
 <br>![13](https://github.com/user-attachments/assets/a030d55e-cadd-455a-bf64-343311957980)
+## Работа в Grafana
+<br>Находится на `localhost:3000`
+<br>Данные для авторизации:
+<br>Username: admin
+<br>Password: admin
+<br>![14](https://github.com/user-attachments/assets/1f1a192c-fda8-4cc0-b4c0-345f02855500)
+
+<br>Тут для того чтобы брать откуда-то данные вставляем экспортер.
+```
+cd grafana_stack_for_docker
+```
+```
+sudo vi docker-compose.yaml
+```
 
 
