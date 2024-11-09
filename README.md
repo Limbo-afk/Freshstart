@@ -108,3 +108,12 @@ cp config/* /mnt/common_volume/swarm/grafana/config/
 mv grafana.yaml docker-compose.yaml
 ```
 <br>![11](https://github.com/user-attachments/assets/369dff69-261a-4209-bf3a-fe618ba95ce9)
+
+<br>Поднимаем Docker Compose.
+```
+sudo docker compose up -d
+```
+<br>![12](https://github.com/user-attachments/assets/da5db25d-174d-4937-8a86-2ca81d2a1ba7)
+<br>![13](https://github.com/user-attachments/assets/a030d55e-cadd-455a-bf64-343311957980)
+
+
