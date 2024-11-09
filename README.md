@@ -41,4 +41,14 @@ sudo yum install curl
 ```
 <br>![6](https://github.com/user-attachments/assets/7f2d289d-7eee-4f71-8e12-29bfbc0fb900)
 
+<br>Обращаемся к репозиторию, чтобы получить последнюю версию Docker Compose.
+<br>Обратите внимание(!), что команду нужно вводить без sudo, потому что она только получает информацию о версии и не требует прав суперпользователя для выполнения.
+```
+COMVER=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)
+```
+
+<br>Загружаем исполняемый файл Docker Compose соответствующей версии для вашей системы.
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+```
 
