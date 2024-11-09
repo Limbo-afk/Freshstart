@@ -64,4 +64,9 @@ sudo chmod +x /usr/bin/docker-compose
 docker-compose --version
 ```
 <br>![8](https://github.com/user-attachments/assets/4ed2a4bd-a511-4240-b781-dec25cdbcc0a)
+## Git and Grafana
 
+<br>Установка гита + клонирование репозитория
+```
+git clone https://github.com/skl256/grafana_stack_for_docker.git
+```
